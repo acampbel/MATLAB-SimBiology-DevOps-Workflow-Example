@@ -38,13 +38,12 @@ classdef ConcTimecourseView < handle
             xlabel(ax, "Time (hours)", 'FontName',obj.FontName);
             ylabel(ax, "Concentrations (nanomole/liter)",'FontName',obj.FontName);
 
-            obj.lhDrug = plot(ax, NaN, NaN, '-','Linewidth',2,'Color',obj.ConcColors(1,:));
+            obj.lhDrug = plot(ax, NaN, NaN, '-','Linewidth',2,'Color',obj.ConcColors(1,:),'DisplayName','Drug');
             hold(ax,'on');
-            obj.lhReceptor = plot(ax, NaN, NaN, '-','Linewidth',2,'Color',obj.ConcColors(2,:));
-            obj.lhComplex= plot(ax, NaN, NaN, '-','Linewidth',2,'Color',obj.ConcColors(3,:));
+            obj.lhReceptor = plot(ax, NaN, NaN, '-','Linewidth',2,'Color',obj.ConcColors(2,:),'DisplayName','Receptor');
+            obj.lhComplex= plot(ax, NaN, NaN, '-','Linewidth',2,'Color',obj.ConcColors(3,:),'DisplayName','Complex');
             hold(ax,'off');
-            lh = legend(ax,{'Drug','Receptor','Complex'},'FontName',obj.FontName);
-            lh.Box = 'off';
+            legend(ax,'show','FontName',obj.FontName,'Box','off');
 
             ax.XLimitMethod = "padded";
             ax.YLimitMethod = "padded";
