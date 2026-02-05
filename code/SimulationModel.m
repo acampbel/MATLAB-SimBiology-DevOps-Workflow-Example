@@ -15,15 +15,17 @@ classdef SimulationModel < handle
         ROIsBetweenThresholds (1,1) logical
     end
 
+    properties ( SetAccess = private )  
+        SimDataTable
+        SimData
+    end
+
     properties ( Hidden )
         % Leave these properties Hidden but public to enable access for any test generated
         % with Copilot during workshop
 
         DoseTable  % daily dose to apply to simulate
         SimFun     % exported SimFunction
-        
-        SimDataTable
-        SimData
 
         ThresholdValues = [20, 80]  % threshold values
     end
@@ -61,7 +63,9 @@ classdef SimulationModel < handle
             
             arguments
                 obj
-                parameters (1,:) double
+                parameters (1,6) double {mustBePositive} = [obj.Kel0, ...
+                    obj.Kon0, obj.Kdeg0 ,obj.Duration0, ...
+                    obj.Amount0, obj.Interval0]
             end
 
             cellpar = num2cell(parameters);
