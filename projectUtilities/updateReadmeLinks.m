@@ -3,7 +3,7 @@ function updateReadmeLinks()
 %repo URL
 
 % Original URL
-origRepoURL = "https://github.com/mathworks/Generating-Tests-for-Your-MATLAB-Code-Workshop";
+origRepoURL = "https://github.com/simkaryote/MATLAB-SimBiology-DevOps-Workflow-Example";
 origRepoInfo = extractRepoIdentifiers(origRepoURL);
 
 % Extract remote repo URL

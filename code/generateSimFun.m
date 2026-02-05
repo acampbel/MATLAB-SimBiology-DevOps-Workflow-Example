@@ -1,7 +1,7 @@
 function MATfilename = generateSimFun(MATfilename)
 
 arguments
-    MATfilename = "simFunction_Dose.mat"
+    MATfilename (1,1) string = "simFunction_Dose.mat"
 end
 
 % if only a file name without folder name is provided, make sure the MAT

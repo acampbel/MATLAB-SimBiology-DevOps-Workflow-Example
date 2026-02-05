@@ -31,9 +31,9 @@ plan("generateSimFun").Dependencies = "check";
 % Define inputs and outputs
 proj = currentProject;
 plan("generateSimFun").Inputs = fullfile(proj.RootFolder,"code","*.sbproj");
-plan("generateSimFun").Outputs = fullfile(proj.RootFolder,"code","*.mat");
+plan("generateSimFun").Outputs = fullfile(proj.RootFolder,"code","simFunction_Dose.mat");
 plan("test").Inputs = fullfile(proj.RootFolder,"code","*");
-plan("compile").Inputs = fullfile(proj.RootFolder,"code",["*.mat","*.mlapp","*.m"]);
+plan("compile").Inputs = fullfile(proj.RootFolder,"code",["simFunction_Dose.mat","*.mlapp","*.m"]);
 plan("compile").Outputs = fullfile(proj.RootFolder,"WebAppArchive");
 
 % Set default task
@@ -59,7 +59,7 @@ function compileTask(~)
     codeFiles = string({codeFiles.name}');
     codeFiles = fullfile(rootFolder,"code",setdiff(codeFiles,"generateSimFun.m"));
 
-    MATfilename = dir(fullfile(rootFolder,"code","*.mat"));
+    MATfilename = dir(fullfile(rootFolder,"code","simFunction_Dose.mat"));
     MATfilename = fullfile(rootFolder,"code",MATfilename.name);
     s = load(MATfilename,"dependenciesSimFun");
 

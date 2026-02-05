@@ -42,8 +42,8 @@ classdef ROTimecourseView < handle
             ylabel(ax, "RO (%)",'FontName',obj.FontName);
 
             obj.lhRO = plot(ax, NaN, NaN, 'Color', obj.ROColors,'Linewidth',2);
-            % yline(ax,model.ThresholdValues(1), '--','efficacy','FontName',obj.FontName,obj.ThresholdStyle{:});
-            % yline(ax,model.ThresholdValues(2), '--','safety','FontName',obj.FontName,obj.ThresholdStyle{:});
+            yline(ax,model.ThresholdValues(1), '--','efficacy','FontName',obj.FontName,obj.ThresholdStyle{:});
+            yline(ax,model.ThresholdValues(2), '--','safety','FontName',obj.FontName,obj.ThresholdStyle{:});
 
                 
             % set limits
