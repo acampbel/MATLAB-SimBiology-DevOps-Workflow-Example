@@ -61,6 +61,7 @@ jobs:
         uses: matlab-actions/run-build@v2
         with:
           tasks: test 
+          build-options: -verbosity verbose
 
 
   build:
@@ -100,6 +101,7 @@ jobs:
         uses: matlab-actions/run-build@v2
         with:
           tasks: test  # change to compile
+          build-options: -verbosity verbose
 
       # Configure GitHub Pages to accept your artifact uploads
       - name: Setup Pages
